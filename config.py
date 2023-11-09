@@ -87,7 +87,7 @@ PLAYLIST_IMG_URL = "https://telegra.ph/file/5482fa3fe59acb9a78863.jpg"
 
 GLOBAL_IMG_URL = "https://telegra.ph/file/5482fa3fe59acb9a78863.jpg"
 
-STATS_IMG_URL = "https://telegra.ph/file/5482fa3fe59acb9a78863.jpg"
+STATS_IMG_URL = "https://telegra.ph/file/e9e1e6bdf81ad13324c9b.jpg"
 
 TELEGRAM_AUDIO_URL = "https://telegra.ph/file/5482fa3fe59acb9a78863.jpg"
 
