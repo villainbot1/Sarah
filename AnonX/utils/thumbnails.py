@@ -7,7 +7,7 @@ import aiohttp
 import numpy as np
 
 from PIL import Image, ImageChops, ImageDraw, ImageEnhance, ImageFilter, ImageFont
-from youtubesearchpython.future import VideosSearch
+from youtubesearchpython.__future__ import VideosSearch
 
 from config import YOUTUBE_IMG_URL
 from AnonX import app
@@ -106,7 +106,8 @@ async def gen_thumb(videoid, user_id):
             im = Image.open(f"cache/chop{videoid}.png").convert("RGBA")
             add_corners(im)
             im.save(f"cache/cropped{videoid}.png")
-            crop_img = Image.open(f"cache/cropped{videoid}.png")
+
+        crop_img = Image.open(f"cache/cropped{videoid}.png")
         logo = crop_img.convert("RGBA")
         logo.thumbnail((365, 365), Image.ANTIALIAS)
         width = int((1280 - 365) / 2)
@@ -170,7 +171,6 @@ async def gen_thumb(videoid, user_id):
         return YOUTUBE_IMG_URL
 
 
-
 async def gen_qthumb(videoid, user_id):
     if os.path.isfile(f"cache/que{videoid}_{user_id}.png"):
         return f"cache/que{videoid}_{user_id}.png"
@@ -211,7 +211,7 @@ async def gen_qthumb(videoid, user_id):
         except:
             hehe = await app.get_profile_photos(app.id)
             wxy = await app.download_media(hehe[0]['file_id'], file_name=f'{app.id}.jpg')
-            xy = Image.open(wxy)
+        xy = Image.open(wxy)
         a = Image.new('L', [640, 640], 0)
         b = ImageDraw.Draw(a)
         b.pieslice([(0, 0), (640,640)], 0, 360, fill = 255, outline = "white")
