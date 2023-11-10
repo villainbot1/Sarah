@@ -1,4 +1,3 @@
-TUBE_IMG_URL
 import os
 import aiohttp
 import aiofiles
